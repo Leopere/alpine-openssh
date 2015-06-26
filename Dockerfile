@@ -11,5 +11,7 @@ RUN apk add --update openssh && \
     /etc/init.d/sshd start && \
     /etc/init.d/sshd stop
 ADD sshd_config /etc/ssh/sshd_config
+EXPOSE 22
 #VOLUME ["/root/.ssh/authorized_keys", "/etc/ssh/sshd_config"]
-ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-d"]
+ENTRYPOINT  ["/bin/sh"]
+CMD  ["/usr/sbin/sshd", "-D", "-d"]
