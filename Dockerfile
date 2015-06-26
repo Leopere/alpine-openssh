@@ -10,5 +10,5 @@ RUN apk add --update openssh && \
     touch /run/openrc/softlevel && \
     /etc/init.d/sshd start && \
     /etc/init.d/sshd stop
-VOLUME ["/root/.ssh/authorized_keys", "/etc/ssh/sshd_config"]
+#VOLUME ["/root/.ssh/authorized_keys", "/etc/ssh/sshd_config"]
 ENTRYPOINT  ["/usr/sbin/sshd", "-D", "-d"]
