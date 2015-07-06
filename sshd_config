@@ -1,9 +1,9 @@
-Port 22
-ListenAddress 0.0.0.0
+#Port 22
+#ListenAddress 0.0.0.0
 
 Protocol 2
-AllowUsers root
-AllowGroups root
+AllowUsers user
+AllowGroups user
 AllowTcpForwarding no
 RSAAuthentication yes
 AuthorizedKeysFile	.ssh/authorized_keys
