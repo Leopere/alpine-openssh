@@ -1,11 +1,20 @@
 # OpenSSH-Server Container
-[![Docker Build Status](http://hubstatus.container42.com/chamunks/alpine-openssh)](https://registry.hub.docker.com/u/chamunks/alpine-openssh)
-[![License: MIT](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/chamunks/alpine-openssh/blob/master/LICENSE)
+`Complexity is the enemy of security`
+This container is intended to just be a simple probably poorly made OpenSSH-Server running on the ultra minimalistic [Alpine Linux](https://www.alpinelinux.org/) [Container](https://registry.hub.docker.com/_/alpine/) for the sake of sticking to docker standards and application separation. Containers are not intended to have more than one process/service running at a time for security purposes I've isolated this container as thinly as possible to help keep outward facing processes separate from internal ones.
 
-This container is intended to just be a simple probably insecure OpenSSH-Server for the sake of sticking to docker standards of application separation.  
+`Why wouldn't I just include SSH in my container?`
+
+This seems like the logical thing to do but in reality you now open your container to more than one attack vector so now you need to consider security of more than one process for your container.  This requires management of user accounts and ssh keypairs and if you're really lazy usernames and passwords.
+
+`But this makes it really annoying and complex to deploy!`
+Yes it can but with docker-compose.yml files you can easily launch a complex interdependent application with one command `docker-compose up`! You can easily create your own YAML parsed docker-compose.yml yourself or you can use services like [this one](https://lorry.io/) to create your own complex application.  One day I may include an example WordPress deployment or something.
+
+`Why not separate commands in your Dockerfile by using the RUN directive for each command rather than separating commands simply with line breaks`
+
+Every RUN directive creates another layer in your container which makes your container much larger than it needs to be.  Meaning if you do any package or archive cleanup after you've installed a bunch of things you're not actually saving any space.
 
 ## Current Status
-Incomplete but functional.
+Incomplete but mostly-functional.
 
 ## ToDo
 - Inject AuthorizedKeys
