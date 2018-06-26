@@ -16,7 +16,5 @@ VOLUME ["/etc/ssh/"]
 
 EXPOSE 22
 
-USER user
-
 ENTRYPOINT  ["/bin/bash"]
 CMD  ["start"]
