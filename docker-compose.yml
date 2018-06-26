@@ -1,0 +1,20 @@
+version: "2"
+
+# networks:
+#   dockerlan:
+#     external: true
+
+services:
+  openssh:
+    # image: github.com/chamunks/alpine-openssh
+    build: .
+    volumes:
+    - ./ssh:/data/.ssh:ro
+    ## Uncomment next line if you're bringing your own sshd_config
+    # - ./etc/ssh/sshd_config:/etc/ssh/sshd_config:ro
+    expose:
+    - 22
+    restart: always
+    # networks:
+    #   dockerlan:
+    #     ipv4_address: 10.5.0.25
