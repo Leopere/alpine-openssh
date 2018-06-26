@@ -12,7 +12,7 @@ services:
     - ./ssh:/data/.ssh:ro
     ## Uncomment next line if you're bringing your own sshd_config
     # - ./etc/ssh/sshd_config:/etc/ssh/sshd_config:ro
-    expose:
+    ports:
     - 22
     restart: always
     # networks:
