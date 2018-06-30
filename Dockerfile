@@ -2,7 +2,7 @@
 ## Alpine based OPENSSH ##
 ##########################
 FROM alpine
-MAINTAINER Chamunks <Chamunks@gmail.com>
+MAINTAINER Chamunks <Chamunks [AT] gmail [DOT] com>
 ## Prepare ##
 # COPY sshd_config /etc/ssh/sshd_config
 
